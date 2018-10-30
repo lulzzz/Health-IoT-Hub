@@ -26,4 +26,4 @@ The Health IoT Hub enforces a secured TLS/HTTPS connection for data security. In
 
 #### Consuming the REST APIs
 
-The Health IoT Hub will provide access to the data in the cloud database through the Database Storage Service. This API can be consumed by desktop, web and mobile health software applications. The data can also be used for Big Data Analysis , Machine Learning and Artificial Intelligence.)
+The Health IoT Hub will provide access to the data in the cloud database through the Database Storage Service. This API can be consumed by desktop, web and mobile health software applications. The data can also be used for Big Data Analysis , Machine Learning and Artificial Intelligence.
