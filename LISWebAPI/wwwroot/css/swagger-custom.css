@@ -1,0 +1,7 @@
+﻿.swagger-ui .topbar {
+    background-color: ghostwhite;
+    border-bottom: 3px solid gainsboro;
+}
+.swagger-ui .topbar a {
+    display:none
+}

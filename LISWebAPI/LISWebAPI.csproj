@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>590ec537-20b3-4ebd-8e07-60a1c4e6af57</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\labconnector\LISConnectorEdge\LISWebAPI\LISWebAPI\LISWebAPI.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\labconnector\LISConnectorEdge\LISWebAPI\LISWebAPI\LISWebAPI.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" />
+    <PackageReference Include="RCL.LISConnector.ASTMParser" Version="1.0.0" />
+    <PackageReference Include="RCL.LISConnector.DataEntity" Version="1.0.0" />
+    <PackageReference Include="RCL.LISConnector.HL7Parser" Version="1.0.2" />
+    <PackageReference Include="RCL.LISConnector.POCTParser" Version="1.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LISWebAPI.Data\LISWebAPI.Data.csproj" />
+    <ProjectReference Include="..\LISWebAPI.DevelopmentMigrations\LISWebAPI.DevelopmentMigrations.csproj">
+      <PrivateAssets>All</PrivateAssets>
+    </ProjectReference>  
+    <ProjectReference Include="..\LISWebAPI.ReleaseMigrations\LISWebAPI.ReleaseMigrations.csproj">
+      <PrivateAssets>All</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RCL.LISConnector.ASTMParser">
+      <HintPath>libs\RCL.LISConnector.ASTMParser.dll</HintPath>
+    </Reference>
+    <Reference Include="RCL.LISConnector.DataEntity">
+      <HintPath>libs\RCL.LISConnector.DataEntity.dll</HintPath>
+    </Reference>
+    <Reference Include="RCL.LISConnector.HL7Parser">
+      <HintPath>libs\RCL.LISConnector.HL7Parser.dll</HintPath>
+    </Reference>
+    <Reference Include="RCL.LISConnector.POCTParser">
+      <HintPath>libs\RCL.LISConnector.POCTParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LISWebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:LISWebAPI.Controllers.apiv1.DiagnosticReportsController.GetDiagnosticReport(System.Int32)">
+            <summary>
+            Get a diagnostic report by id
+            </summary>
+            <param name="id">The diagnostic report id</param>
+            <response code="200">Returns a diagnostic report</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.DiagnosticReportsController.GetDiagnosticReportsByPatientId(System.Int32)">
+            <summary>
+            Get diagnostic reports by patient id
+            </summary>
+            <param name="patientId">The patient id</param>
+            <response code="200">Returns a list of diagnostic reports for a patient</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.DiagnosticReportsController.GetDiagnosticReportsByDate(System.String,System.String)">
+            <summary>
+            Get diagnostic reports by date
+            </summary>
+            <param name="startDate">The start date - string("ddMMyyyy") [eg: "14021980"]</param>
+            <param name="endDate">The end date - string("ddMMyyyy") [eg: "14021980"]</param>
+            <response code="200">Returns a list of diagnostic reports by date</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.DiagnosticReportsController.PostDiagnosticReport(RCL.LISConnector.DataEntity.SQL.DiagnosticReport)">
+            <summary>
+            Add a new diagnostic report
+            </summary>
+            <param name="diagnosticReport">The diagnostic report entity</param>
+            <response code="201">Returns the diagnostic report entity that was created</response>
+            <response code="400">If bad request</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.DiagnosticReportsController.DiagnosticReport(System.Int32,RCL.LISConnector.DataEntity.SQL.DiagnosticReport)">
+            <summary>
+            Edit a diagnostic report
+            </summary>
+            <param name="id">The diagnostic report id</param>
+            <param name="diagnosticReport">The diagnostic report entity</param>
+            <response code="204">Returns no content when updated</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.DiagnosticReportsController.DeleteDiagnosticReport(System.Int32)">
+            <summary>
+            Delete a diagnostic report
+            </summary>
+            <param name="id">The diagnostic report id</param>
+            <response code="200">Returns the diagnostic report that was deleted</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.PatientsController.GetPatients">
+            <summary>
+            Get first 50 patients 
+            </summary>
+            <response code="200">Returns a list of patients</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.PatientsController.GetPatient(System.Int32)">
+            <summary>
+            Get a patient by id
+            </summary>
+            <param name="id">The patient id</param>
+            <response code="200">Returns a patient</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.PatientsController.GetPatientByName(System.String,System.String)">
+            <summary>
+            Get patients by first name and last name
+            </summary>
+            <param name="firstName">The patient's first name (first three letters)</param>
+            <param name="lastName">The patient's last name (first three letters)</param>
+            <response code="200">Returns a list of patients</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.PatientsController.GetPatientByNameAndDateOfBirth(System.String,System.String,System.String)">
+            <summary>
+            Get a patient by first name , last name and date of birth
+            </summary>
+            <param name="firstName">The patient's first name</param>
+            <param name="lastName">The patient's last name</param>
+            <param name="dateOfBirth">The patient's date of birth - string("ddMMyyyy") [eg: "14021980"]</param>
+            <response code="200">Returns a patient</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.PatientsController.PutPatient(System.Int32,RCL.LISConnector.DataEntity.SQL.Patient)">
+            <summary>
+            Edit a patient
+            </summary>
+            <param name="id">The patient id</param>
+            <param name="patient">The patient entity</param>
+            <response code="204">Returns no content when updated</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.PatientsController.PostPatient(RCL.LISConnector.DataEntity.SQL.Patient)">
+            <summary>
+            Create a new patient
+            </summary>
+            <param name="patient">The patient entity</param>
+            <response code="201">Returns the patient entity that was created</response>
+            <response code="400">If bad request</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.PatientsController.DeletePatient(System.Int32)">
+            <summary>
+            Delete a patient
+            </summary>
+            <param name="id">The patient id</param>
+            <response code="200">Returns the patient that was deleted</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.ResultsController.GetResultsByDiagnosticReportId(System.Int32)">
+            <summary>
+            Get results by diagnostic report id
+            </summary>
+            <param name="diagnosticReportId">The diagnostic report id</param>
+            <response code="200">Returns a list of results in a diagnostic report</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.ResultsController.GetResult(System.Int32)">
+            <summary>
+            Get a result by id
+            </summary>
+            <param name="id">The result id</param>
+            <response code="200">Returns a result</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.ResultsController.PostResult(RCL.LISConnector.DataEntity.SQL.Result)">
+            <summary>
+            Add a new result
+            </summary>
+            <param name="result">The result entity</param>
+            <response code="201">Returns the result entity that was created</response>
+            <response code="400">If bad request</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.ResultsController.Result(System.Int32,RCL.LISConnector.DataEntity.SQL.Result)">
+            <summary>
+            Edit a result
+            </summary>
+            <param name="id">The result id</param>
+            <param name="result">The result entity</param>
+            <response code="204">Returns no content when updated</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.ResultsController.DeleteResult(System.Int32)">
+            <summary>
+            Delete a result
+            </summary>
+            <param name="id">The result id</param>
+            <response code="200">Returns the result that was deleted</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.TestCodesController.GetTestCodes">
+            <summary>
+            Get 250 test codes
+            </summary>
+            <response code="200">Returns a list of test codes</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.TestCodesController.GetTestCode(System.String)">
+            <summary>
+            Get test code by id
+            </summary>
+            <param name="id">The test code id</param>
+            <response code="200">Returns a test code</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.TestCodesController.PostTestCode(RCL.LISConnector.DataEntity.SQL.TestCode)">
+            <summary>
+            Create a new test code
+            </summary>
+            <param name="testCode">The test code entity</param>
+            <response code="201">Returns the test code entity that was created</response>
+            <response code="400">If bad request</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.TestCodesController.PutTestCode(System.Int32,RCL.LISConnector.DataEntity.SQL.TestCode)">
+            <summary>
+            Edit a test code
+            </summary>
+            <param name="id">The test code id</param>
+            <param name="testcode">The test code entity</param>
+            <response code="204">Returns no content when updated</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+        <member name="M:LISWebAPI.Controllers.apiv1.TestCodesController.DeleteTestCode(System.Int32)">
+            <summary>
+            Delete a test code
+            </summary>
+            <param name="id">The test code id</param>
+            <response code="200">Returns the test code entity that was deleted</response>
+            <response code="400">If bad request</response>
+            <response code="404">If not found</response>
+        </member>
+    </members>
+</doc>
